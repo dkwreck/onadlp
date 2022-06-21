@@ -1,0 +1,45 @@
+{
+  "name": "simple-boilerplate",
+  "version": "1.0.0",
+  "description": "simple-boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browser": "browser-sync start --server ./build --files ./build/*",
+    "watch:js": "watchify ./src/js/index.js --outfile ./build/assets/js/main.min.js",
+    "watch:sass": "node-sass ./src/sass/main.scss ./build/assets/css/main.min.css --output-style compressed -w",
+    "watch:ejs": "nodemon -e ejs -x \"npm run ejs \"",
+    "js": "NODE_ENV=production browserify ./src/js/index.js -o ./build/assets/js/main.js",
+    "sass": "node-sass ./src/sass/main.scss ./build/assets/css/main.min.css --output-style compressed",
+    "ejs": "ejs-cli --base-dir src/ejs '**/*.ejs' --exclude 'components/' --out ./build/",
+    "uglifyjs": "uglifyjs ./build/assets/js/main.js --mangle -c --output ./build/assets/js/main.min.js --source-map base=build/assets/js,url=main.js.map",
+    "server": "npm run browser & npm run watch:js & npm run watch:sass & npm run watch:ejs",
+    "build": "npm run js && npm run sass && npm run ejs && npm run uglifyjs",
+    "sassunminify": "node-sass ./src/sass/main.scss ./build/assets/css/main.css --output-style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkwreck/simple-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkwreck/simple-boilerplate/issues"
+  },
+  "homepage": "https://github.com/dkwreck/simple-boilerplate#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "browser-sync": "^2.27.7",
+    "browserify": "^17.0.0",
+    "ejs-cli": "^2.2.3",
+    "eventemitter3": "^4.0.7",
+    "jquery": "^3.6.0",
+    "jscat": "0.0.2",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "uglify-js": "^3.15.0",
+    "underscore": "^1.13.2",
+    "watchify": "^4.0.0"
+  }
+}

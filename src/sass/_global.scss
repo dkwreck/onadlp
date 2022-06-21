@@ -1,0 +1,15 @@
+body {
+    background-color: #fff;
+    @include widest {
+        background-color: #fff;
+    }
+    @include wide {
+        background-color: #fff;
+    }
+    @include narrow {
+        background-color: #fff;
+    }
+    @include narrowest {
+        background-color: #fff;
+    }
+}

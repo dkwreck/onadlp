@@ -1,0 +1,29 @@
+@mixin widest {
+    @media screen and (max-width: 1440px) {
+        @content;
+    }
+}
+@mixin wide {
+    @media screen and (max-width: 960px) {
+        @content;
+    }
+}
+@mixin narrow {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin narrowest {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+/*
+:: pxをvwに変換する関数
+*/
+
+@function px2vw($px) {
+    $vw: 100 / 1440 * $px * 1vw; //1440はwidestの値を設定
+    @return $vw;
+}
