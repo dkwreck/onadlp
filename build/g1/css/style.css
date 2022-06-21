@@ -101,7 +101,7 @@ body{
 
 .cta-a a{
 	position: absolute;
-	top: 37.222vw;
+	top: 34vw;
 	left: 4.444%;
 	width: 91.111%;
 	z-index: 23;
@@ -550,10 +550,10 @@ footer{
 
 footer #fnav{
 	text-align: center;
-	width: 100%;
+	width: auto;
 	font-size: 2.4vw;
 	line-height: 2;
-	padding: 0 0 3.05vw;
+	padding: 0 10px 3.05vw 10px;
 }
 
 footer #fnav a{
@@ -573,6 +573,50 @@ footer #fnav a{
 	vertical-align: top;
 }
 
+#v2_qa {
+	padding: 20px 12px;
+	text-align: center;
+}
+
+#v2_qa dt {
+	margin-bottom: 20px;
+}
+
+#v2_qa dd {
+	margin-bottom: 20px;
+	display: none;
+}
+
+.v2_hr {
+	height: 0;
+  margin: 8px 32px 32px 32px;
+  padding: 0;
+  border: 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #fff;
+	background-color: #fff;
+}
+
+.v2_cta_a {
+	position: relative;
+	z-index: 15;
+}
+
+.v2_cta_a a.top {
+	position: absolute;
+	top: 34vw;
+	left: 4.444%;
+	width: 91.111%;
+	z-index: 23;
+}
+
+.v2_cta_a a.bottom {
+	position: absolute;
+	top: 70vw;
+	left: 4.444%;
+	width: 91.111%;
+	z-index: 23;
+}
 
 /************************************************************************************************************************
 
