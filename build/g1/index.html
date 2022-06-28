@@ -61,9 +61,7 @@
 			</section>
 
 			<section class="youtube">
-				<div>
-					<iframe width="100%" src="https://www.youtube.com/embed/X5Q4W7qO9Vg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/X5Q4W7qO9Vg?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</section>
 
 			<section>
@@ -100,7 +98,7 @@
 
 			<section>
 				<div>
-					<img src="img/v2_006.png" alt="">
+					<img src="img/v2_006.png" alt="" style="background-color: #f5878c;">
 				</div>
 			</section>
 
@@ -166,10 +164,8 @@
 			</section>
 
 
-			<section>
-				<div>
-					<iframe width="100%" src="https://www.youtube.com/embed/a6uNWEjuv0U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
+			<section class="youtube">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/a6uNWEjuv0U?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</section>
 
 			<section>
@@ -248,8 +244,6 @@
 			</footer>
 
 
-
-
 			<div id="fixed-button">
 				<div class="fixed-button-inner">
 					<a href="https://onad.resv.jp/" target="_blank"><img src="img/v2_fixed_button.png" alt="無料ガイダンスを申し込む"></a>
@@ -259,11 +253,13 @@
 				$(function(){
 					var timeoutId ;
 					var count = 0 ;
+					var isBottom = false;
 					var scrollDirection = function () {
 						clearTimeout( timeoutId );
 						timeoutId = setTimeout( function () {
-							console.log("stop");
-							$(".fixed-button-inner").addClass('active');
+							if (!isBottom) {
+								$(".fixed-button-inner").addClass('active');
+							}
 						}, 500 ) ;
 					};
 					$(window).on('scroll', function() {
@@ -274,13 +270,18 @@
 						$(".fixed-button-inner").removeClass("active");
 							scrollDirection();
 					});
+					$(window).on('scroll', function () {
+						var doch = $(document).innerHeight();
+						var winh = $(window).innerHeight();
+						var bottom = doch - winh;
+						if (bottom <= $(window).scrollTop()) {
+							isBottom = true;
+						} else {
+							isBottom = false;
+						}
+					});
 				});
 			</script>
-
-
-
-
-
 
 
 		</div>
