@@ -568,6 +568,24 @@ footer #fnav a{
 	padding: 8px 0;
 }
 
+.v2_txt.s18 {
+	font-size: 19px;
+	font-weight: bold;
+	margin-top: 8px;
+}
+
+.v2_txt.m0 {
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+@media screen and ( min-width:721px ){
+	.v2_txt.s18 {
+		font-size: 32px;
+		font-weight: bold;
+	}
+}
+
 .note {
 	font-size: 10px;
 	vertical-align: top;
