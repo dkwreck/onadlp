@@ -1,20 +1,5 @@
-@mixin widest {
-    @media screen and (max-width: 1440px) {
-        @content;
-    }
-}
 @mixin wide {
-    @media screen and (max-width: 960px) {
-        @content;
-    }
-}
-@mixin narrow {
-    @media screen and (max-width: 768px) {
-        @content;
-    }
-}
-@mixin narrowest {
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 721px) {
         @content;
     }
 }

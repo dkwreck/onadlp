@@ -1,15 +1,6 @@
 body {
-    background-color: #fff;
-    @include widest {
-        background-color: #fff;
-    }
+    background-color: #fff !important;
     @include wide {
-        background-color: #fff;
-    }
-    @include narrow {
-        background-color: #fff;
-    }
-    @include narrowest {
-        background-color: #fff;
+        background-color: #fff !important;
     }
 }
