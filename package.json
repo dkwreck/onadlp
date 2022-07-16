@@ -6,16 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "browser": "browser-sync start --server ./build --files ./build/*",
-    "watch:js": "watchify ./src/js/index.js --outfile ./build/assets/js/main.min.js",
-    "watch:sass": "node-sass ./src/sass/main.scss ./build/assets/css/main.min.css --output-style compressed -w",
+    "watch:js": "watchify ./src/js/index.js --outfile ./build/assets_lp/js/main.min.js",
+    "watch:sass": "node-sass ./src/sass/main.scss ./build/assets_lp/css/main.min.css --output-style compressed -w",
     "watch:ejs": "nodemon -e ejs -x \"npm run ejs \"",
-    "js": "NODE_ENV=production browserify ./src/js/index.js -o ./build/assets/js/main.js",
-    "sass": "node-sass ./src/sass/main.scss ./build/assets/css/main.min.css --output-style compressed",
+    "js": "NODE_ENV=production browserify ./src/js/index.js -o ./build/assets_lp/js/main.js",
+    "sass": "node-sass ./src/sass/main.scss ./build/assets_lp/css/main.min.css --output-style compressed",
     "ejs": "ejs-cli --base-dir src/ejs '**/*.ejs' --exclude 'components/' --out ./build/",
-    "uglifyjs": "uglifyjs ./build/assets/js/main.js --mangle -c --output ./build/assets/js/main.min.js --source-map base=build/assets/js,url=main.js.map",
+    "uglifyjs": "uglifyjs ./build/assets_lp/js/main.js --mangle -c --output ./build/assets_lp/js/main.min.js --source-map base=build/assets_lp/js,url=main.js.map",
     "server": "npm run browser & npm run watch:js & npm run watch:sass & npm run watch:ejs",
     "build": "npm run js && npm run sass && npm run ejs && npm run uglifyjs",
-    "sassunminify": "node-sass ./src/sass/main.scss ./build/assets/css/main.css --output-style expanded"
+    "sassunminify": "node-sass ./src/sass/main.scss ./build/assets_lp/css/main.css --output-style expanded"
   },
   "repository": {
     "type": "git",

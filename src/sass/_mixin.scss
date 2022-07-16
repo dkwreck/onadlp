@@ -9,6 +9,51 @@
 */
 
 @function px2vw($px) {
-    $vw: 100 / 1440 * $px * 1vw; //1440はwidestの値を設定
+    $vw: 100 / 720 * $px * 1vw; //1440はwidestの値を設定
     @return $vw;
+}
+
+@font-face {
+  font-family: 'Noto Serif Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/NotoSerifJP-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/NotoSansJP-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+
+$font-serif: 'Noto Serif Japanese', serif, sans-serif;
+$font-sans: 'Noto Sans Japanese';
+$navy: #3778C8;
+$blue: #469BD4;
+$red: #F88487;
+$pink: #FDE2E3;
+$green: #94D753;
+$orange: #FB754C;
+$yellow: #FEF02E;
+$yellow2: #FEF586;
+$yellow3: #FAF6C3;
+
+@mixin grad-line($padding-bottom) {
+    position: relative;
+    padding-bottom: $padding-bottom;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 64px;
+        height: 4px;
+        background-size: cover;
+        transform: translateX(-50%);
+        background-image: url(../images/grad-line.svg);
+    }
 }
