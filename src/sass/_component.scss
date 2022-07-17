@@ -9,10 +9,16 @@ body {
 
 .def-container {
   padding: 24px 30px;
+  @include wide {
+    padding: px2vw(24) px2vw(30);
+  }
 }
 
 .pad-container {
   padding: 16px 24px;
+  @include wide {
+    padding: px2vw(16) px2vw(24);
+  }
 }
 
 
@@ -43,6 +49,12 @@ body {
     background-color: #FFF;
     border-radius: 15px;
     padding: 24px;
+    @include wide {
+      padding: px2vw(24);
+    }
+  }
+  @include wide {
+    padding: px2vw(16) px2vw(30) px2vw(8) px2vw(30);
   }
 }
 
@@ -94,11 +106,17 @@ body {
       font-size: 16px;
       font-weight: 900;
       line-height: 1;
+      @include wide {
+        font-size: px2vw(16);
+      }
     }
     h1 {
       span {
         color: #000;
         font-weight: 900;
+      }
+      @include wide {
+        line-height: px2vw(34);
       }
     }
   }
@@ -111,41 +129,93 @@ body {
       box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
       border-radius: 15px;
       background-color: #fff;
+      img {
+        @include wide {
+          width: 100%;
+        }
+      }
       .info {
         padding: 16px;
         margin-bottom: 10px;
         height: 346px;
+        @include wide {
+          height: 420px;
+          margin-bottom: 20px;
+          padding: px2vw(16);
+        }
         .kana {
           font-size: 12px;
           margin-bottom: 8px;
           line-height: 1;
+          @include wide {
+            font-size: px2vw(9);
+          }
         }
         .name {
           font-size: 17px;
           font-weight: 500;
           line-height: 1;
           margin-bottom: 16px;
+          @include wide {
+            font-size: px2vw(17);
+          }
         }
         .qual-name {
           font-size: 11px;
           line-height: 1;
           margin-bottom: 8px;
           color: #666;
+          @include wide {
+            font-size: px2vw(10);
+          }
         }
         .qual {
           font-size: 13px;
           line-height: 1;
           margin-bottom: 16px;
+          @include wide {
+            font-size: px2vw(13);
+          }
         }
         .prof {
           margin-bottom: 16px;
           line-height: 24px;
+          @include wide {
+            line-height: px2vw(24);
+          }
         }
       }
     }
   }
 }
 
+#sec-09 {
+  .sec-09 {
+    h1 {
+      @include grad-line(28px);
+    }
+    &.def-container {
+      padding-bottom: 8px;
+    }
+  }
+}
+
+#sec-10 {
+  .sec-10 {
+    .inner-box {
+      padding: 16px;
+    }
+  }
+}
+
+#sec-11 {
+  padding: 16px;
+  .sec-11 {
+    .inner-box {
+      padding: 16px;
+    }
+  }
+}
 
 /* Image*/
 
@@ -155,6 +225,36 @@ img {
   }
   &.auto {
     width: auto;
+  }
+  @include wide {
+    width: 80%;
+    &.auto {
+      width: auto;
+    }
+  }
+}
+
+.i2step {
+  @include wide {
+    width: 100px !important;
+  }
+}
+
+.step1 {
+  @include wide {
+    width: 100px !important;
+  }
+}
+
+.step2 {
+  @include wide {
+    width: 100px !important;
+  }
+}
+
+.g1-sec-07-01 {
+  @include wide {
+    width: 100px !important;
   }
 }
 
@@ -230,8 +330,8 @@ p, li {
   font-size: 9.5px !important;
   line-height: 15px;
   @include wide {
-    font-size: px2vw(9.5);
-    line-height: px2vw(15);
+    font-size: px2vw(9.5) !important;
+    line-height: px2vw(13);
   }
 }
 
@@ -239,7 +339,7 @@ p, li {
   font-size: 10px !important;
   line-height: 18px;
   @include wide {
-    font-size: px2vw(10);
+    font-size: px2vw(10) !important;
     line-height: px2vw(18);
   }
 }
@@ -248,7 +348,7 @@ p, li {
   font-size: 14px !important;
   line-height: 25px;
   @include wide {
-    font-size: px2vw(14);
+    font-size: px2vw(14) !important;
     line-height: px2vw(25);
   }
 }
@@ -257,7 +357,7 @@ p, li {
   font-size: 16px !important;
   line-height: 29px;
   @include wide {
-    font-size: px2vw(16);
+    font-size: px2vw(16) !important;
     line-height: px2vw(29);
   }
 }
@@ -266,7 +366,7 @@ p, li {
   font-size: 18px !important;
   line-height: 32px;
   @include wide {
-    font-size: px2vw(18);
+    font-size: px2vw(18) !important;
     line-height: px2vw(32);
   }
 }
@@ -275,7 +375,7 @@ p, li {
   font-size: 20px !important;
   line-height: 40px;
   @include wide {
-    font-size: px2vw(20);
+    font-size: px2vw(20) !important;
     line-height: px2vw(40);
   }
 }
@@ -284,7 +384,7 @@ p, li {
   font-size: 24px !important;
   line-height: 38px;
   @include wide {
-    font-size: px2vw(24);
+    font-size: px2vw(24) !important;
     line-height: px2vw(38);
   }
 }
@@ -293,7 +393,7 @@ p, li {
   font-size: 29px !important;
   line-height: 42px;
   @include wide {
-    font-size: px2vw(29);
+    font-size: px2vw(29) !important;
     line-height: px2vw(42);
   }
 }
@@ -302,7 +402,7 @@ p, li {
   font-size: 32px !important;
   line-height: 42px;
   @include wide {
-    font-size: px2vw(32);
+    font-size: px2vw(32) !important;
     line-height: px2vw(42);
   }
 }
@@ -313,6 +413,9 @@ p, li {
 
 .lineheight-23 {
   line-height: 23px !important;
+  @include wide {
+    line-height: px2vw(23) !important;
+  }
 }
 
 ._navy {
@@ -353,6 +456,7 @@ p, li {
   height: 33px;
   @include wide {
     font-size: px2vw(14);
+    height: px2vw(33);
   }
   &.bg-navy {
     background-color: $navy;
@@ -370,6 +474,14 @@ p, li {
 
 .center {
   text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
 }
 
 .mt0 {
@@ -391,13 +503,13 @@ p, li {
 .mt16 {
   margin-top: 16px;
   @include wide {
-    margin-top: px2vw(32);
+    margin-top: px2vw(16);
   }
 }
 .mt24 {
   margin-top: 24px;
   @include wide {
-    margin-top: px2vw(48);
+    margin-top: px2vw(24);
   }
 }
 .mt32 {
@@ -409,7 +521,13 @@ p, li {
 .mt40 {
   margin-top: 40px;
   @include wide {
-    margin-top: px2vw(80);
+    margin-top: px2vw(40);
+  }
+}
+.mt48 {
+  margin-top: 48px;
+  @include wide {
+    margin-top: px2vw(48);
   }
 }
 
@@ -425,6 +543,9 @@ hr {
 .num {
   position: relative;
   padding-top: 50px;
+  @include wide {
+    padding-top: px2vw(50);
+  }
   &::before {
     content: "";
     position: absolute;
@@ -434,6 +555,10 @@ hr {
     height: 40px;
     background-size: cover;
     transform: translateX(-50%);
+    @include wide {
+      width: px2vw(40);
+      height: px2vw(40);
+    }
   }
   &.num1 {
     &::before {
@@ -482,11 +607,23 @@ hr {
   }
   .pad {
     padding: 16px;
+    @include wide {
+      padding: px2vw(16);
+    }
   }
 }
 
 .flex-box {
   @include flex;
+}
+
+.flex-wrap-50 {
+  @include flex;
+  @include flex-wrap;
+  @include flex-middle;
+  > div {
+    width: 50%;
+  }
 }
 
 .step {
@@ -497,6 +634,9 @@ hr {
   letter-spacing: 0.04em;
   color: $navy;
   margin-bottom: 16px;
+  @include wide {
+    font-size: px2vw(17);
+  }
 }
 
 .padding-30 {
@@ -539,6 +679,10 @@ hr {
   background-color: $yellow3;
 }
 
+.box-orange {
+  background-color: $orange;
+}
+
 .dum-checkbox {
   position: relative;
   padding-left: 24px;
@@ -552,6 +696,9 @@ hr {
     background-size: cover;
     background-image: url(../images/dum-checkbox.svg);
     background-repeat: no-repeat;
+    @include wide {
+      top: 12px;
+    }
   }
 }
 
@@ -592,6 +739,7 @@ hr {
         line-height: 23px;
         position: relative;
         border-radius: 15px;
+        text-align: center;
         span {
           font-size: 16px;
           line-height: 23px;
@@ -610,6 +758,9 @@ hr {
           background-size: cover;
           background-image: url(../images/g1-sec-07-arrow.svg);
           background-repeat: no-repeat;
+        }
+        @include wide {
+          padding: px2vw(10) px2vw(11);
         }
       }
     }

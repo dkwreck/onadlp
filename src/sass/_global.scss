@@ -26,6 +26,11 @@ body {
 	display: block;
 	width: 32px;
 	z-index: 52;
+    cursor: pointer;
+    @include wide {
+        width: 48px;
+        top: 30.166vw;
+    }
 }
 
 #adv .next-arrow{
@@ -35,6 +40,11 @@ body {
 	display: block;
 	width: 32px;
 	z-index: 52;
+    cursor: pointer;
+    @include wide {
+        width: 48px;
+        top: 30.166vw;
+    }
 }
 
 #adv ul.slider{
@@ -53,4 +63,117 @@ body {
     width: 5px !important;
     height: 5px !important;
     margin: 0 5px !important;
+}
+
+#v2_qa {
+	padding: 12px 12px;
+}
+
+#v2_qa dt {
+    position: relative;
+    padding-left: 42px;
+    margin-bottom: 20px;
+    line-height: 24px;
+    color: #666;
+    padding-right: 36px;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -1px;
+        width: 32px;
+        height: 32px;
+        background-image: url(../images/q.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/qa-arrow-down.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &.active {
+        &::after {
+            background-image: url(../images/qa-arrow-up.svg);
+        }
+    }
+}
+
+#v2_qa dd {
+	display: none;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    line-height: 24px;
+    color: #666;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -1px;
+        width: 32px;
+        height: 32px;
+        background-image: url(../images/a.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+
+footer {
+    .footer {
+        nav {
+            ul {
+                text-align: center;
+                padding: 24px 10px 8px 10px;
+                li {
+                    display: inline-block;
+                    line-height: 16px;
+                    a {
+                        font-size: 9.5px;
+                        line-height: 16px;
+                        &::after {
+                            content: "｜"
+                        }
+                    }
+                    &:last-child {
+                        a {
+                            &::after {
+                                content: "";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .copy-box {
+            background-color: #999;
+            color: #FFF;
+            @include flex;
+            @include flex-between;
+            padding: 8px 12px;
+            div {
+                &:first-child {
+                    flex: 0 0 53px;
+                }
+                &:last-child {
+                    padding-left: 16px;
+                }
+            }
+            p {
+                font-size: 8.5px;
+                line-height: 13px;
+                &:last-child {
+                    text-align: right;
+                    line-height: 1;
+                }
+            }
+        }
+    }
 }
