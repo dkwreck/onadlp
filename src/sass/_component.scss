@@ -675,6 +675,10 @@ hr {
   background-color: $pink;
 }
 
+.box-blue {
+  background-color: $lightblue;
+}
+
 .box-yellow {
   background-color: $yellow3;
 }
@@ -762,6 +766,43 @@ hr {
         @include wide {
           padding: px2vw(10) px2vw(11);
         }
+      }
+    }
+  }
+}
+
+#what-modal {
+  //padding: 30px;
+  .what-modal-inner {
+    background-color: #FFF;
+    border-radius: 15px;
+    overflow: hidden;
+    h1 {
+      font-size: 19px;
+      line-height: 30px;
+      @include grad-line(24px);
+    }
+    .spc-h2 {
+      position: relative;
+      padding-top: 16px;
+      &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 64px;
+          height: 4px;
+          background-size: cover;
+          transform: translateX(-50%);
+          background-image: url(../images/grad-line.svg);
+      }
+    }
+    .def-container {
+      padding-bottom: 0;
+    }
+    .modal-image {
+      img {
+        width: 126px;
       }
     }
   }

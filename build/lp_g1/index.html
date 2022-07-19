@@ -354,10 +354,63 @@
   </div>
 </section>
 
+
 <section>
-  <div class="center">
-    <img src="../assets_lp/images/button-click.png" alt="お金の無料相談ってよく見るけど 無料と有料の違いって何？">
+  <div class="what-open center">
+    <img src="../assets_lp/images/button-click.png" data-modal="what-00" alt="お金の無料相談ってよく見るけど 無料と有料の違いって何？">
   </div>
+  <div class="modal-what" data-modal="content-what">
+    <div class="what-container">
+      <div id="what-modal">
+        <div class="what-modal-inner">
+          <div class="def-container">
+            <div class="what-close right" data-modal="close-what"><img src="../assets_lp/images/close-what.svg" alt="閉じる"></div>
+            <h1 class="center _bold">お金の無料相談って<br>よく見るけど<br>無料と有料の違いって何？</h1>
+            <h2 class="center _bold _x_large _navy mt16">よくある［お金の無料相談］</h2>
+            <p class="mt16">
+              無料相談を提供する事業者の中には、<span class="_navy _bold">金融商品等の販売手数料等で利益を得ている先もある</span>ため、無料相談後に<span class="_navy _bold">何らかの商品提案や営業を行う前提</span>でヒアリング・ご相談を行う業者も見受けられます。<br>
+              また、無料相談を提供する事業者にもさまざまなタイプが存在し、相談先によっては、<span class="_navy _bold">課題解決のために必要な商品が十分に揃っていない（保険商品のみ・特定の金融機関の投資商品のみしか取り扱っていない）</span>場合がございます。
+            </p>
+            <hr class="mt16">
+            <h2 class="center _bold _x_large _navy mt16">無料相談に向いている方</h2>
+            <div class="center modal-image">
+              <img class="auto" src="../assets_lp/images/g1-modal-01.png" alt="">
+            </div>
+          </div>
+          <div class="box-blue">
+            <p class="pad-container">
+              ●営業トークは気にならない! という方<br>
+              ●商品や提案内容を自分で見極められる目を持っている方 など
+            </p>
+          </div>
+        </div>
+        <div class="what-modal-inner mt16">
+          <div class="def-container">
+            <h2 class="spc-h2 _orange _x_large _bold center">オンアドの［有料相談］</h2>
+            <p class="mt16">
+              オンアドは、資産運用や保険、ローンといったお金に関するご相談をお伺いする際に、取り扱い商品の制約や営業目標がある中で、お客様にとって本当に最適なアドバイスを提供することは<span class="_bold _orange">「非常に難しい」</span>と考えております。オンアドが金融商品の販売 を行わず、有料アドバイスに特化する理由はここにあります。
+            </p>
+            <p class="mt24">
+              オンアドでは、最善のアドバイスを提供するために、はじめに現状分析をしっかりと行い、あなただけのオリジナルな課題解決策をみつけ出します。<br>
+              <span class="_bold _orange">あなたにとって本当に必要な対策は何なのかを判断できるよう、客観的・中立的な立場からアドバイスいたします。</span>金融商品の提案ありきでアドバイスは行いませんので、分析の結果次第では、「問題点無し」で無理に運用をする必要は無いとお伝えすることもあり得ます。
+            </p>
+            <hr class="mt16">
+            <h2 class="center _bold _x_large _orange mt16">有料相談に向いている方</h2>
+            <div class="center modal-image">
+              <img class="auto" src="../assets_lp/images/g1-modal-02.png" alt="">
+            </div>
+          </div>
+          <div class="box-pink">
+            <p class="pad-container">
+              ●商品を営業されたり、自分でよく理解しないまま買いたくないという方<br>
+              ●自分に合った最適なプラン提案やアドバイスをお求めの方 など
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay_f" data-modal="overlay-what"></div>
 </section>
 
 <section id="adv">
@@ -676,5 +729,43 @@
             </div>
         </div>
     </div>
+<div id="fixed-button">
+    <div class="fixed-button-inner">
+        <a href="https://onad.resv.jp/" target="_blank"><img src="../assets_lp/images/g1-fixed-button.svg" alt="無料ガイダンスを申し込む"></a>
+    </div>
+</div>
+<script>
+    $(function(){
+        var timeoutId ;
+        var count = 0 ;
+        var isBottom = false;
+        var scrollDirection = function () {
+            clearTimeout( timeoutId );
+            timeoutId = setTimeout( function () {
+                if (!isBottom) {
+                    $(".fixed-button-inner").addClass('active');
+                }
+            }, 500 ) ;
+        };
+        $(window).on('scroll', function() {
+            $(".fixed-button-inner").removeClass("active");
+        scrollDirection();
+        });
+        $('body').on('touchmove', function() {
+            $(".fixed-button-inner").removeClass("active");
+                scrollDirection();
+        });
+        $(window).on('scroll', function () {
+            var doch = $(document).innerHeight();
+            var winh = $(window).innerHeight();
+            var bottom = doch - winh;
+            if (bottom <= $(window).scrollTop()) {
+                isBottom = true;
+            } else {
+                isBottom = false;
+            }
+        });
+    });
+</script>
 </body>
 </html>

@@ -31,6 +31,24 @@ var App = {
             }
           });
         });
+
+        $('[data-modal="overlay-what"], [data-modal="close-what"], [data-modal="content-what"]').hide();
+        $('[data-modal="what-00"]').on('click', function(){
+          posi = $(window).scrollTop();
+          $('[data-modal="fixed_f"]').css({
+            position: 'fixed',
+            top: -1 * posi,
+            width: '100%'
+          });
+          $('[data-modal="overlay-what"], [data-modal="close-what"], [data-modal="content-what"]').fadeIn();
+        });
+        $('[data-modal="close-what"],[data-modal="overlay-what"]').on('click', function(){
+          $('[data-modal="fixed_f"]').attr('style', '');
+          $('html, body').prop({scrollTop: posi});
+          $('[data-modal="overlay-what"], [data-modal="close-what"], [data-modal="content-what"]').fadeOut();
+        });
+
+
     }
 }
 $(function(){

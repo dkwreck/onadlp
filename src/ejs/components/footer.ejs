@@ -49,5 +49,43 @@
             </div>
         </div>
     </div>
+<div id="fixed-button">
+    <div class="fixed-button-inner">
+        <a href="https://onad.resv.jp/" target="_blank"><img src="../assets_lp/images/g1-fixed-button.svg" alt="無料ガイダンスを申し込む"></a>
+    </div>
+</div>
+<script>
+    $(function(){
+        var timeoutId ;
+        var count = 0 ;
+        var isBottom = false;
+        var scrollDirection = function () {
+            clearTimeout( timeoutId );
+            timeoutId = setTimeout( function () {
+                if (!isBottom) {
+                    $(".fixed-button-inner").addClass('active');
+                }
+            }, 500 ) ;
+        };
+        $(window).on('scroll', function() {
+            $(".fixed-button-inner").removeClass("active");
+        scrollDirection();
+        });
+        $('body').on('touchmove', function() {
+            $(".fixed-button-inner").removeClass("active");
+                scrollDirection();
+        });
+        $(window).on('scroll', function () {
+            var doch = $(document).innerHeight();
+            var winh = $(window).innerHeight();
+            var bottom = doch - winh;
+            if (bottom <= $(window).scrollTop()) {
+                isBottom = true;
+            } else {
+                isBottom = false;
+            }
+        });
+    });
+</script>
 </body>
 </html>
